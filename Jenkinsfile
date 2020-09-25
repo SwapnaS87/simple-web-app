@@ -30,7 +30,7 @@ pipeline {
 		
 			stage("Deploy to staging") {
 				steps {
-				   deploy adapters: [tomcat8(credentialsId: 'd4098cd1-4505-4831-b36c-1a745b07eadb', path: '', url: 'http://ec2-18-221-74-184.us-east-2.compute.amazonaws.com:9090/')], contextPath: null, war: '**/*.war'
+				   deploy adapters: [tomcat8(credentialsId: 'd4098cd1-4505-4831-b36c-1a745b07eadb', path: '', url: 'http://ec2-3-129-149-119.us-east-2.compute.amazonaws.com:9090/')], contextPath: null, war: '**/*.war'
 				}
 				post {
 				    success {
@@ -62,7 +62,7 @@ pipeline {
 				input 'Do you want to deploy an application to production?'
 			}
 			
-			deploy adapters: [tomcat8(credentialsId: 'd4098cd1-4505-4831-b36c-1a745b07eadb', path: '', url: 'http://ec2-18-221-74-184.us-east-2.compute.amazonaws.com:9999/')], contextPath: null, war: '**/*.war'
+			deploy adapters: [tomcat8(credentialsId: 'd4098cd1-4505-4831-b36c-1a745b07eadb', path: '', url: 'http://ec2-3-129-149-119.us-east-2.compute.amazonaws.com:9999/')], contextPath: null, war: '**/*.war'
 		}
 		post {
 			success {
